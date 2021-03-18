@@ -1,0 +1,19 @@
+all: main
+
+main: stack.o getch.o getop.o main.o
+	gcc -Wall -o main stack.o getch.o getop.o main.o
+
+main.o: main.c
+	gcc -c -Wall main.c
+
+stack.o: stack.c
+	gcc -c -Wall stack.c
+
+getch.o: getch.c
+	gcc -c -Wall getch.c
+
+getop.o: getop.c
+	gcc -c -Wall getop.c
+
+clean:
+	del *o
